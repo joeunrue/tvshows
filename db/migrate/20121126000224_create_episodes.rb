@@ -1,6 +1,6 @@
-class CreateShows < ActiveRecord::Migration
+class CreateEpisodes < ActiveRecord::Migration
   def change
-    create_table :shows do |t|
+    create_table :episodes do |t|
       t.string :title
       t.string :link
       t.string :guid
