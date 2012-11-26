@@ -23,6 +23,10 @@ group :development do
   gem 'rb-fchange', :require => false
 end
 
+group :tools do
+    gem 'guard-test'
+end
+
 gem 'jquery-rails'
 
 gem 'feedzirra'
