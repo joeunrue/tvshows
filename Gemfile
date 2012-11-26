@@ -16,9 +16,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'guard'
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+end
+
 gem 'jquery-rails'
 
-#gem 'nokogiri'
 gem 'feedzirra'
 gem 'carrierwave'
 
