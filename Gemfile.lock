@@ -42,6 +42,8 @@ GEM
       execjs
     coffee-script-source (1.4.0)
     curb (0.7.18)
+    dropbox-sdk (1.5.1)
+      json
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -150,6 +152,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   curb
+  dropbox-sdk
   fabrication
   feedzirra
   guard

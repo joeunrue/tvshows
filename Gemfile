@@ -36,6 +36,7 @@ gem 'jquery-rails'
 gem 'feedzirra'
 gem 'carrierwave'
 gem 'curb'
+gem 'dropbox-sdk'
 
 # Use unicorn as the app server
 # gem 'unicorn'
