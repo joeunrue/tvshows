@@ -24,13 +24,18 @@ group :development do
 end
 
 group :tools do
-    gem 'guard-test'
+  gem 'guard-test'
+end
+
+group :test do
+  gem 'fabrication'
 end
 
 gem 'jquery-rails'
 
 gem 'feedzirra'
 gem 'carrierwave'
+gem 'curb'
 
 # Use unicorn as the app server
 # gem 'unicorn'
