@@ -4,9 +4,7 @@ class Episode < ActiveRecord::Base
   mount_uploader :torrent, TorrentUploader
 
   # Callbacks
-  before_create :parse_description
-  before_save :download_torrent,
-    :if => Proc.new { |episode| episode.torrent.blank? }
+  before_create :parse_description, :download_torrent
 
   attr_accessible :description, :guid, :link, :title, :published_at
 

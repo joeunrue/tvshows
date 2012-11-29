@@ -33,10 +33,11 @@ end
 
 gem 'jquery-rails'
 
-gem 'feedzirra'
 gem 'carrierwave'
 gem 'curb'
+gem 'devise'
 gem 'dropbox-sdk'
+gem 'feedzirra'
 
 # Use unicorn as the app server
 # gem 'unicorn'
