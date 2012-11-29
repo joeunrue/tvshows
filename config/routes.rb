@@ -6,5 +6,5 @@ Tvshows::Application.routes.draw do
     resources :episodes
   end
 
-  root :to => 'shows#index'
+  root :to => 'home#index'
 end
