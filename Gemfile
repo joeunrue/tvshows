@@ -38,6 +38,7 @@ gem 'curb'
 gem 'devise'
 gem 'dropbox-sdk'
 gem 'feedzirra'
+gem 'ledermann-rails-settings', :require => 'rails-settings'
 
 # Use unicorn as the app server
 # gem 'unicorn'
