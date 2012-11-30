@@ -39,6 +39,8 @@ gem 'devise'
 gem 'dropbox-sdk'
 gem 'feedzirra'
 gem 'ledermann-rails-settings', :require => 'rails-settings'
+gem 'omniauth'
+gem 'omniauth-dropbox'
 
 # Use unicorn as the app server
 # gem 'unicorn'

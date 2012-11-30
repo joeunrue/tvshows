@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121129160514) do
+ActiveRecord::Schema.define(:version => 20121129181828) do
 
   create_table "episodes", :force => true do |t|
     t.string   "title"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(:version => 20121129160514) do
     t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "oauth_accounts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
+    t.string   "secret"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "email"
   end
 
   create_table "settings", :force => true do |t|
@@ -68,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20121129160514) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
