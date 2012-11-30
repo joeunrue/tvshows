@@ -2,6 +2,10 @@ require 'feedzirra'
 class Feed < ActiveRecord::Base
   attr_accessible :name, :url
 
+  def self.parse_all
+    Feed.all.each{ |feed| feed.parse_feed }
+  end
+
   def parse_feed
     feed = Feedzirra::Feed.fetch_and_parse(url)
     feed.entries.each do |entry|
@@ -18,5 +22,6 @@ class Feed < ActiveRecord::Base
         show.save
       end
     end
+    update_attribute(:parsed_at, Time.now)
   end
 end

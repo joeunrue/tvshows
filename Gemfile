@@ -41,6 +41,7 @@ gem 'feedzirra'
 gem 'ledermann-rails-settings', :require => 'rails-settings'
 gem 'omniauth'
 gem 'omniauth-dropbox'
+gem 'whenever', :require => false
 
 # Use unicorn as the app server
 # gem 'unicorn'

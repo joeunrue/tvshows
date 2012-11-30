@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121129181828) do
+ActiveRecord::Schema.define(:version => 20121130163258) do
 
   create_table "episodes", :force => true do |t|
     t.string   "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20121129181828) do
     t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.datetime "parsed_at"
   end
 
   create_table "oauth_accounts", :force => true do |t|
