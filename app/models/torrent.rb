@@ -6,8 +6,8 @@ class Torrent < ActiveRecord::Base
   # Callbacks
   #before_create :parse_description, :download_file
 
-  attr_accessible :episode_id, :file, :file_format, :filename,
-    :is_full_season, :is_nuked, :description
+  attr_accessible :episode_id, :file, :file_format, :filename, :link, :title,
+    :is_full_season, :is_nuked, :description, :guid, :published_at
 
   protected
 

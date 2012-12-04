@@ -14,29 +14,23 @@
 ActiveRecord::Schema.define(:version => 20121203201314) do
 
   create_table "episodes", :force => true do |t|
-    t.string   "title"
-    t.string   "link"
-    t.string   "guid"
-    t.text     "description"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.string   "torrent"
-    t.datetime "published_at"
     t.integer  "show_id"
+    t.string   "title"
     t.integer  "season_number"
     t.integer  "episode_number"
-    t.string   "file_format"
-    t.boolean  "is_nuked"
-    t.boolean  "is_full_season"
-    t.string   "filename"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
+
+  add_index "episodes", ["season_number"], :name => "index_episodes_on_season_number"
+  add_index "episodes", ["show_id"], :name => "index_episodes_on_show_id"
 
   create_table "feeds", :force => true do |t|
     t.string   "name"
     t.string   "url"
+    t.datetime "parsed_at"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.datetime "parsed_at"
   end
 
   create_table "oauth_accounts", :force => true do |t|
@@ -76,10 +70,13 @@ ActiveRecord::Schema.define(:version => 20121203201314) do
     t.boolean  "is_full_season"
     t.string   "filename"
     t.string   "file_format"
+    t.string   "guid"
     t.text     "description"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  add_index "torrents", ["episode_id"], :name => "index_torrents_on_episode_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -1,17 +1,26 @@
 development:
-  adapter: mysql
-  datbase: tvshows_development
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: tvshows_development
   username: root
-  password: 
+  password:
+  socket: /tmp/mysql.sock
 
 test:
-  adapter: mysql
-  datbase: tvshows_test
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: tvshows_test
   username: root
-  password: 
+  password:
+  socket: /tmp/mysql.sock
 
 production:
-  adapter: mysql
-  datbase: tvshows_production
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: tvshows_production
   username: root
-  password: 
+  password:
+  socket: /tmp/mysql.sock
