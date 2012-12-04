@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.9'
 
-gem 'sqlite3'
+gem 'activerecord-mysql-adapter'
 
 # Gems used only for assets and not required
 # in production environments by default.
