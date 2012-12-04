@@ -3,6 +3,7 @@ class CreateFeeds < ActiveRecord::Migration
     create_table :feeds do |t|
       t.string :name
       t.string :url
+      t.datetime :parsed_at
 
       t.timestamps
     end

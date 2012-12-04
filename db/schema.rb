@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121130163258) do
+ActiveRecord::Schema.define(:version => 20121203201314) do
 
   create_table "episodes", :force => true do |t|
     t.string   "title"
@@ -66,6 +66,19 @@ ActiveRecord::Schema.define(:version => 20121130163258) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "torrents", :force => true do |t|
+    t.integer  "episode_id"
+    t.datetime "published_at"
+    t.string   "file"
+    t.boolean  "is_nuked"
+    t.boolean  "is_full_season"
+    t.string   "filename"
+    t.string   "file_format"
+    t.text     "description"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
