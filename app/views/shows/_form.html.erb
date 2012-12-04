@@ -1,10 +1,10 @@
-<%= form_for(@show) do |f| %>
-  <% if @show.errors.any? %>
+<%= form_for(show) do |f| %>
+  <% if show.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@show.errors.count, "error") %> prohibited this show from being saved:</h2>
+      <h2><%= pluralize(show.errors.count, "error") %> prohibited this show from being saved:</h2>
 
       <ul>
-      <% @show.errors.full_messages.each do |msg| %>
+      <% show.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

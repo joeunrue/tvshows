@@ -1,27 +1,21 @@
-require 'feedzirra'
 class Feed < ActiveRecord::Base
+
   attr_accessible :name, :url
+  validates_presence_of :name, :url
 
   def self.parse_all
     Feed.all.each{ |feed| feed.parse_feed }
   end
 
   def parse_feed
-    feed = Feedzirra::Feed.fetch_and_parse(url)
-    feed.entries.each do |entry|
-      show_title = Show.parse_title(entry.title)
-      show = Show.find_or_create_by_name(show_title)
-      if show.episodes.find_by_guid(entry.entry_id).nil?
-        show.episodes.build(
-          :title => entry.title,
-          :link => entry.url,
-          :guid => entry.entry_id,
-          :description => entry.summary,
-          :published_at => entry.published
-        )
-        show.save
-      end
-    end
+    FeedParser.parse(self.url)
     update_attribute(:parsed_at, Time.now)
   end
+
+private
+
+  def feed_from_feedzirra
+    Feedzirra::Feed.fetch_and_parse(url)
+  end
+
 end

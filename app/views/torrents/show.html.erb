@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Episode:</b>
+  <%= @torrent.episode_id %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @torrent.file %>
+</p>
+
+<p>
+  <b>Is nuked:</b>
+  <%= @torrent.is_nuked %>
+</p>
+
+<p>
+  <b>Is full season:</b>
+  <%= @torrent.is_full_season %>
+</p>
+
+<p>
+  <b>Filename:</b>
+  <%= @torrent.filename %>
+</p>
+
+<p>
+  <b>File format:</b>
+  <%= @torrent.file_format %>
+</p>
+
+
+<%= link_to 'Edit', edit_torrent_path(@torrent) %> |
+<%= link_to 'Back', torrents_path %>

@@ -1,0 +1,2 @@
+Fabricator(:show) do
+end

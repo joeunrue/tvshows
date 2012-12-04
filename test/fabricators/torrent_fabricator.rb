@@ -1,0 +1,2 @@
+Fabricator(:torrent) do
+end

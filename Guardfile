@@ -16,4 +16,7 @@ guard :test do
   watch('app/controllers/application_controller.rb') {
     ["test/functional", "test/integration"]
   }
+  watch(%r{^test/fabricators/(.+)_fabricator.rb$}) { |m|
+    "test/unit/#{m[1]}_test.rb"
+  }
 end

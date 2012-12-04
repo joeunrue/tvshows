@@ -1,6 +1,6 @@
 <h1>Editing show</h1>
 
-<%= render 'form' %>
+<%= render 'form', locals: { show: @show } %>
 
 <%= link_to 'Show', @show %> |
 <%= link_to 'Back', shows_path %>

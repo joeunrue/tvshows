@@ -1,0 +1,33 @@
+<h1>Listing torrents</h1>
+
+<table>
+  <tr>
+    <th>Episode</th>
+    <th>File</th>
+    <th>Is nuked</th>
+    <th>Is full season</th>
+    <th>Filename</th>
+    <th>File format</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @torrents.each do |torrent| %>
+  <tr>
+    <td><%= torrent.episode_id %></td>
+    <td><%= torrent.file %></td>
+    <td><%= torrent.is_nuked %></td>
+    <td><%= torrent.is_full_season %></td>
+    <td><%= torrent.filename %></td>
+    <td><%= torrent.file_format %></td>
+    <td><%= link_to 'Show', torrent %></td>
+    <td><%= link_to 'Edit', edit_torrent_path(torrent) %></td>
+    <td><%= link_to 'Destroy', torrent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Torrent', new_torrent_path %>

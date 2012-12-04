@@ -1,0 +1,18 @@
+<rss version="2.0">
+  <channel>
+    <title>Test Feed</title>
+    <link>localhost</link>
+    <description>This is a test feed</description>
+    <language>en-us</language>
+    <ttl>120</ttl>
+    <item>
+      <title>Test Show - 1x02 - Test Title (720p .mkv)</title>
+      <link>http://localhost/testfile</link>
+      <guid isPermaLink="true">http://localhost/testfile</guid>
+      <comments>comments</comments>
+      <pubDate>Mon, 03 Dec 2012 03:07:12 +0000</pubDate>
+      <description>Show Name:Test Show; Show Title: Test Title (720p .mkv); Season: 1; Episode: 02; Filename: Test.Show.S01E01.720p.mkv;</description>
+      <enclosure url="http://torrent.tvtorrents.com/FetchTorrentServlet" length="206343576" type="application/x-bittorrent"/>
+    </item>
+  </channel>
+</rss>
