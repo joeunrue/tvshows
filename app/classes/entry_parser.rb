@@ -46,7 +46,10 @@ class EntryParser
       guid: @entry.entry_id,
       link: @entry.url,
       description: @entry.summary,
-      published_at: @entry.published
+      published_at: @entry.published,
+      filename: parse_filename,
+      file_format: parse_file_format,
+      is_full_season: is_full_season?
     )
   end
 
@@ -58,11 +61,11 @@ class EntryParser
 
   def parse_episode_title
     @episode_title ||= slice_and_strip_string_with_regex(
-      @description_hash[:show_title], /Show Title:([^\(\)])+/
+      @description_hash[:show_title], /Show Title:([^\(\)]+)/
     )
   end
 
-  def parse_file_format(line)
+  def parse_file_format
     @file_format ||= slice_and_strip_string_with_regex(
       @description_hash[:show_title], /Show Title:[^\(\)]+ \(([^\(\)]+)\)/
     )

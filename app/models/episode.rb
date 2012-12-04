@@ -4,4 +4,8 @@ class Episode < ActiveRecord::Base
   has_many :torrents
 
   attr_accessible :title, :season_number, :episode_number
+
+  def name
+    title
+  end
 end

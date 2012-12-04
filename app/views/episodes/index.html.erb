@@ -5,7 +5,6 @@
     <th>Season</th>
     <th>Episode</th>
     <th>Title</th>
-    <th>File Type</th>
     <th>Download</th>
   </tr>
 
@@ -14,8 +13,7 @@
     <td><%= episode.season_number %></td>
     <td><%= episode.episode_number %></td>
     <td><%= episode.name %></td>
-    <td><%= episode.file_format %></td>
-    <td><%= link_to 'torrent', episode.torrent.url %></td>
+    <td><%#= link_to 'torrent', episode.torrent.url %></td>
   </tr>
 <% end %>
 </table>
