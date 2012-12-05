@@ -1,3 +1,8 @@
 <h1>Welcome to Saxon's TV Torrents App</h1>
 
-<p>Please log in to proceed</p>
+<h2>Recent Episodes</h2>
+<ul>
+  <% @recent_episodes.each do |episode| %>
+    <li><%= episode.title %> &mdash; <%= episode.published_at %></li>
+  <% end %>
+</ul>
