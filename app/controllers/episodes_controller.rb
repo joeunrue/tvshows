@@ -1,5 +1,6 @@
 class EpisodesController < ApplicationController
   before_filter :find_show
+
   def index
     @episodes = @show.episodes
   end
@@ -21,7 +22,7 @@ class EpisodesController < ApplicationController
     @episode = @show.episodes.new(params[:episode])
 
     if @episode.save
-      redirect_to @episode, notice: 'Episode was successfully created.'
+      redirect_to [@show, @episode], notice: 'Episode was successfully created.'
     else
       render action: "new"
     end
@@ -31,7 +32,7 @@ class EpisodesController < ApplicationController
     @episode = @show.episodes.find(params[:id])
 
     if @episode.update_attributes(params[:episode])
-      redirect_to @episode, notice: 'Episode was successfully updated.'
+      redirect_to [@show, @episode], notice: 'Episode was successfully updated.'
     else
       render action: "edit"
     end
@@ -41,7 +42,7 @@ class EpisodesController < ApplicationController
     @episode = @show.episodes.find(params[:id])
     @episode.destroy
 
-    redirect_to episodes_url
+    redirect_to show_episodes_url(@show)
   end
 
 private

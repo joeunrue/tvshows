@@ -35,7 +35,14 @@ class TorrentsControllerTest < ActionController::TestCase
   end
 
   test "should update torrent" do
-    put :update, id: @torrent, torrent: { episode_id: @torrent.episode_id, file: @torrent.file, file_format: @torrent.file_format, filename: @torrent.filename, is_full_season: @torrent.is_full_season, is_nuked: @torrent.is_nuked }
+    put :update, id: @torrent, torrent: {
+      episode_id: @torrent.episode_id,
+      file: @torrent.file,
+      file_format: @torrent.file_format,
+      filename: @torrent.filename,
+      is_full_season: @torrent.is_full_season,
+      is_nuked: @torrent.is_nuked
+    }
     assert_redirected_to torrent_path(assigns(:torrent))
   end
 

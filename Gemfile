@@ -30,6 +30,8 @@ end
 
 group :test do
   gem 'fabrication'
+  gem 'ruby-prof', :git => 'git://github.com/wycats/ruby-prof.git'
+  gem 'test-unit'
 end
 
 gem 'jquery-rails'

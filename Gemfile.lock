@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/wycats/ruby-prof.git
+  revision: ffae61a895531f9601dd302a3eb0abc58c2a5473
+  specs:
+    ruby-prof (0.11.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -193,6 +199,8 @@ DEPENDENCIES
   rb-fchange
   rb-fsevent
   rb-inotify
+  ruby-prof!
   sass-rails (~> 3.2.3)
+  test-unit
   uglifier (>= 1.0.3)
   whenever
