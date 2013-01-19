@@ -2,24 +2,15 @@
 
 <table>
   <tr>
+    <th>Show</th>
+    <th>Title</th>
     <th>Season</th>
     <th>Episode</th>
-    <th>Title</th>
     <th>Published</th>
     <th>Downloads</th>
   </tr>
 
-<% @episodes.each do |episode| %>
-  <tr>
-    <td><%= episode.season_number %></td>
-    <td><%= episode.episode_number %></td>
-    <td><%= episode.name %></td>
-    <td><%= episode.published_at %></td>
-    <% episode.torrents.order(:file_format).each do |torrent| -%>
-      <td><%= link_to torrent.file_format, torrent.file.url %></td>
-    <% end -%>
-  </tr>
-<% end %>
+  <%= render @episodes %>
 </table>
 
 <br/>

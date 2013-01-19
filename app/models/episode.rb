@@ -8,9 +8,8 @@ class Episode < ActiveRecord::Base
   scope :sorted, order(:season_number, :episode_number)
   scope :recent, lambda { |*args|
     number = args[0] || 5
-    includes(:torrents).
-    joins(:torrents).
-    order('torrents.published_at DESC').
+    includes(:torrents, :show).
+    order('episodes.created_at DESC').
     limit(number)
   }
 

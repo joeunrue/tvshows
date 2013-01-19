@@ -5,8 +5,7 @@ class Show < ActiveRecord::Base
   scope :recent, lambda { |*args|
     number = args[0] || 5
     includes(:episodes => :torrents).
-    joins(:episodes => :torrents).
-    order('torrents.published_at DESC').
+    order('episodes.created_at DESC').
     limit(number)
   }
 end

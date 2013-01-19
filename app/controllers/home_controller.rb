@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @recent_shows = Show.recent
-    @recent_episodes = Episode.recent
+    @recent_episodes = Episode.recent(25)
   end
 end

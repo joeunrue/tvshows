@@ -2,7 +2,7 @@ class EpisodesController < ApplicationController
   before_filter :find_show
 
   def index
-    @episodes = @show.episodes
+    @episodes = @show.episodes.sorted
   end
 
   def show
