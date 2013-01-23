@@ -67,7 +67,7 @@ class EntryParser
 
   def parse_file_format
     @file_format ||= slice_and_strip_string_with_regex(
-      @description_hash[:show_title], /Show Title:[^\(\)]+ \(([^\(\)]+)\)/
+      @description_hash[:show_title], /Show Title:[^\(\)]+ .+\(([^\(\)]+)\)$/
     )
   end
 
