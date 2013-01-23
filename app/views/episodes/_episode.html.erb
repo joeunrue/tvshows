@@ -4,7 +4,11 @@
   <td><%= episode.season_number %></td>
   <td><%= episode.episode_number %></td>
   <td><%= "#{time_ago_in_words(episode.created_at)} ago" %></td>
-  <% episode.torrents.each do |torrent| -%>
-    <td><%= link_to torrent.file_format, torrent.file.url %></td>
+  <% file_formats ||= episode.torrents.map{ |i| i.file_format } %>
+  <% file_formats.each do |file_format| %>
+    <% torrent = episode.torrents.where(:file_format => file_format).first %>
+    <td width="5%">
+      <%= link_to(torrent.file_format, torrent.file.url) if torrent %>
+    </td>
   <% end -%>
 </tr>

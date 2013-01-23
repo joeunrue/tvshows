@@ -13,5 +13,8 @@
     </tr>
   </thead>
 
-  <%= render @recent_episodes %>
+  <%= render :partial => 'episodes/episode',
+             :collection => @recent_episodes,
+             :as => :episode,
+             :locals => { :file_formats => @file_formats } %>
 </table>
