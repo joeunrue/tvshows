@@ -10,7 +10,9 @@
     <th>Downloads</th>
   </tr>
 
-  <%= render @episodes %>
+  <%= render :partial => 'episode',
+    :collection => @episodes,
+    :locals => { :file_formats => @file_formats } %>
 </table>
 
 <br/>

@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
+<h1>
+  <%= link_to @episode.show.name, show_episodes_path(@episode.show) %> -
   <%= @episode.title %>
-</p>
+</h1>
+
+<p id="notice"><%= notice %></p>
 
 <p>
   <b>Season Number:</b>
@@ -15,6 +15,21 @@
   <%= @episode.episode_number %>
 </p>
 
+<p>
+  <b>Timestamp</b>
+  <%= "#{time_ago_in_words(@episode.created_at)} ago" %>
+</p>
+
+<p>
+  <b>Torrents</b>
+  <ul>
+  <% @episode.torrents.each do |torrent| %>
+    <li>
+      <%= link_to(torrent.file_format, torrent.file.url) if torrent %>
+    </li>
+  <% end -%>
+  </ul>
+</p>
 
 <%= link_to 'Edit', edit_show_episode_path(@show, @episode) %> |
 <%= link_to 'Back', show_episodes_path(@show) %>

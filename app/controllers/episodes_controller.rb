@@ -3,6 +3,9 @@ class EpisodesController < ApplicationController
 
   def index
     @episodes = @show.episodes.sorted
+    @file_formats = @episodes.map{
+      |i| i.torrents.map{ |i| i.file_format }
+    }.flatten.uniq
   end
 
   def show
@@ -11,7 +14,6 @@ class EpisodesController < ApplicationController
 
   def new
     @episode = @show.episodes.new
-
   end
 
   def edit

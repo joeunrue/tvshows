@@ -1,6 +1,6 @@
 <tr>
   <td><%= link_to episode.show.name, show_episodes_path(episode.show) %></td>
-  <td><%= episode.title %></td>
+  <td><%= link_to episode.title, [episode.show, episode] %></td>
   <td><%= episode.season_number %></td>
   <td><%= episode.episode_number %></td>
   <td><%= "#{time_ago_in_words(episode.created_at)} ago" %></td>
