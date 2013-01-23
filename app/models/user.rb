@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :oauth_accounts
+  has_many :subscriptions
+  has_many :shows, :through => :subscriptions
 
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable

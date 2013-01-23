@@ -1,5 +1,7 @@
 class Show < ActiveRecord::Base
   has_many :episodes
+  has_many :subscriptions
+  has_many :users, :through => :subscriptions
   attr_accessible :name
 
   scope :recent, lambda { |*args|
