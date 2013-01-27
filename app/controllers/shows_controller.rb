@@ -1,6 +1,7 @@
 class ShowsController < ApplicationController
   def index
     @shows = Show.all
+    @file_formats = Show.file_formats
   end
 
   def show

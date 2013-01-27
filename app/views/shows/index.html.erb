@@ -1,9 +1,31 @@
 <h1>Listing shows</h1>
 
 <table>
-<% @shows.each do |show| %>
-  <tr>
-    <td><%= link_to show.name, show_episodes_path(show) %></td>
-  </tr>
-<% end %>
+  <thead>
+    <tr>
+      <td>Show Name</td>
+      <% @file_formats.each do |file_format| -%>
+        <td><%= file_format %></td>
+      <% end -%>
+    </tr>
+  </thead>
+  <tbody>
+  <% @shows.each do |show| %>
+    <tr>
+      <td><%= link_to show.name, show_episodes_path(show) %></td>
+      <% @file_formats.each do |file_format| -%>
+        <% if show.file_formats.include?(file_format) -%>
+          <% if user_signed_in? &&
+            current_user.is_subscribed_to_show?(show, file_format) %>
+            <td class='subscribed'><%= file_format %></td>
+          <% else -%>
+            <td><%= file_format %></td>
+          <% end -%>
+        <% else -%>
+          <td></td>
+        <% end -%>
+      <% end -%>
+    </tr>
+  <% end %>
+  </tbody>
 </table>

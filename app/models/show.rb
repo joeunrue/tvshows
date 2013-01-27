@@ -10,4 +10,16 @@ class Show < ActiveRecord::Base
     order('episodes.created_at DESC').
     limit(number)
   }
+
+  def file_formats
+    episodes.includes(:torrents).map{ |episode|
+      episode.torrents.map{ |i| i.file_format }
+    }.flatten.uniq
+  end
+
+  def self.file_formats
+    Show.includes(:episodes => :torrents).map{ |i|
+      i.file_formats
+    }.flatten.uniq
+  end
 end
