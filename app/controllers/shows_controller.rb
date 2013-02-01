@@ -1,6 +1,6 @@
 class ShowsController < ApplicationController
   def index
-    @shows = Show.all
+    @shows = Show.includes(:episodes => :torrents)
     @file_formats = Show.file_formats
   end
 

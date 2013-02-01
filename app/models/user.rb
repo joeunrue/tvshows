@@ -44,8 +44,10 @@ class User < ActiveRecord::Base
   end
 
   def is_subscribed_to_show?(show, file_format)
-    subscription = subscriptions.where(:show_id => show.id,
-                                       :file_format_string => file_format)
-    !subscription.empty?
+    !subscription_for_show(show, file_format).nil?
+  end
+
+  def subscription_for_show(show, file_format)
+    subscriptions.where(:show_id => show.id, :file_format_string => file_format).first
   end
 end

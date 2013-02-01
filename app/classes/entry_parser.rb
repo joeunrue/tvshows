@@ -66,9 +66,13 @@ class EntryParser
   end
 
   def parse_file_format
-    @file_format ||= slice_and_strip_string_with_regex(
-      @description_hash[:show_title], /Show Title:[^\(\)]+ .*\(([^\(\)]+)\) *$/
-    )
+    format_options = @description_hash[:show_title].split('(').
+      map{ |i| i.split(')')[0] }
+    if format_options.last[/[Rr]epack/]
+      @file_format = format_options[format_options.length - 2]
+    else
+      @file_format = format_options.last
+    end
   end
 
   def parse_season_number

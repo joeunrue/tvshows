@@ -17,9 +17,21 @@
         <% if show.file_formats.include?(file_format) -%>
           <% if user_signed_in? &&
             current_user.is_subscribed_to_show?(show, file_format) %>
-            <td class='subscribed'><%= file_format %></td>
+            <td id="<%= "#{show.name}-#{file_format}-subscription" -%>" class='subscribed'>
+              <%= link_to file_format,
+                subscription_path(current_user.subscription_for_show(show, file_format).id),
+                :remote => true,
+                :update => "#{show.name}-#{file_format}-subscription",
+                :method => :delete %>
+            </td>
           <% else -%>
-            <td><%= file_format %></td>
+            <td id="<%= "#{show.name}-#{file_format}-subscription" -%>" class='unsubscribed'>
+              <%= link_to file_format,
+                subscriptions_path(:show_id => show.id, :file_format => file_format),
+                :remote => true,
+                :update => "#{show.name}-#{file_format}-subscription",
+                :method => :post %>
+            </td>
           <% end -%>
         <% else -%>
           <td></td>

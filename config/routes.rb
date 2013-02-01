@@ -9,6 +9,7 @@ Tvshows::Application.routes.draw do
   resources :shows do
     resources :episodes
   end
+  resources :subscriptions, :only => [:create, :destroy]
 
   root :to => 'home#index'
 end
