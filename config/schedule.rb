@@ -7,7 +7,7 @@ job_type :runner,
 job_type :rake,
   "cd :path && RAILS_ENV=:environment bin/rake :task :output"
 
-every 1.hour do
-  rake 'feeds:parse', :environment => :development
-  #runner 'Feed.parse_all', :environment => :development
+every 15.minutes do
+  rake 'feeds:parse'
+  #runner 'Feed.parse_all'
 end
