@@ -18,6 +18,7 @@ group :assets do
 end
 
 group :development do
+  gem 'capistrano'
   gem 'guard'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
@@ -45,12 +46,6 @@ gem 'ledermann-rails-settings', :require => 'rails-settings'
 gem 'omniauth'
 gem 'omniauth-dropbox'
 gem 'whenever', :require => false
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
