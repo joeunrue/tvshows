@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+  load_and_authorize_resource
   def create
     current_user.subscriptions.create(
       :show_id => params[:show_id],

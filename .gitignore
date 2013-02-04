@@ -19,8 +19,8 @@
 vendor/ruby
 
 # Ignore uploaded files
-/public/uploads
+public/uploads
 
 # Ignore private config files
-/config/database.yml
-/config/deploy.rb
+config/database.yml
+config/deploy.rb

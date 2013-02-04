@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :subscriptions
   has_many :shows, :through => :subscriptions
 
-  devise :database_authenticatable, :registerable, :omniauthable,
+  devise :database_authenticatable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username
@@ -25,11 +25,12 @@ class User < ActiveRecord::Base
   end
 
   def self.from_oauth_account(account)
-    User.create do |user|
-      user.username = account.name
-      user.email = account.email
-      user.provider = account.provider
-    end
+    #User.create do |user|
+    #  user.username = account.name
+    #  user.email = account.email
+    #  user.provider = account.provider
+    #end
+    User.new
   end
 
   def self.new_with_session(params, session)

@@ -1,5 +1,5 @@
 <h1>Welcome to Saxon's TV Torrents App</h1>
-
+<% if current_user -%>
 <h2>Recent Episodes</h2>
 <table width="100%">
   <thead>
@@ -18,3 +18,6 @@
              :as => :episode,
              :locals => { :file_formats => @file_formats } %>
 </table>
+<% else -%>
+  <p>You are not authorized to see this content</p>
+<% end -%>

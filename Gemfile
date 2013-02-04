@@ -37,6 +37,7 @@ end
 
 gem 'jquery-rails'
 
+gem 'cancan'
 gem 'carrierwave'
 gem 'curb'
 gem 'devise'

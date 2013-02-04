@@ -7,8 +7,7 @@ class OmniauthCallbacksController < ApplicationController
       flash.notice = 'Signed in!'
       sign_in_and_redirect user
     else
-      session['devise.user_attributes'] = user.attributes
-      redirect_to new_user_registration_url
+      redirect_to root_path
     end
   end
   alias_method :dropbox, :all
