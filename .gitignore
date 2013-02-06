@@ -23,4 +23,3 @@ public/uploads
 
 # Ignore private config files
 config/database.yml
-config/deploy.rb
