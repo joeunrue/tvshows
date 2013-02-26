@@ -1,5 +1,6 @@
 class ShowsController < ApplicationController
   load_and_authorize_resource
+
   def index
     @shows = Show.includes(:episodes => :torrents)
     @file_formats = Show.file_formats

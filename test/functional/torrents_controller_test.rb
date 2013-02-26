@@ -18,7 +18,14 @@ class TorrentsControllerTest < ActionController::TestCase
 
   test "should create torrent" do
     assert_difference('Torrent.count') do
-      post :create, torrent: { episode_id: @torrent.episode_id, file: @torrent.file, file_format: @torrent.file_format, filename: @torrent.filename, is_full_season: @torrent.is_full_season, is_nuked: @torrent.is_nuked }
+      post :create, torrent: {
+        episode_id: @torrent.episode_id,
+        file: @torrent.file,
+        file_format: @torrent.file_format,
+        filename: @torrent.filename,
+        is_full_season: @torrent.is_full_season,
+        is_nuked: @torrent.is_nuked
+      }
     end
 
     assert_redirected_to torrent_path(assigns(:torrent))
