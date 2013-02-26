@@ -7,7 +7,7 @@
   <% file_formats ||= episode.torrents.map{ |i| i.file_format } %>
   <% file_formats.each do |file_format| %>
     <% torrent = episode.torrents.where(:file_format => file_format).first %>
-    <td width="5%">
+    <td>
       <%= link_to(torrent.file_format, torrent.file.url) if torrent %>
     </td>
   <% end -%>
