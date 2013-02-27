@@ -3,33 +3,33 @@
   <%= @episode.title %>
 </h1>
 
-<p id="notice"><%= notice %></p>
+<div id="notice" class="row"><%= notice %></div>
 
-<p>
-  <b>Season Number:</b>
-  <%= @episode.season_number %>
-</p>
-
-<p>
-  <b>Episode Number:</b>
-  <%= @episode.episode_number %>
-</p>
-
-<p>
-  <b>Timestamp</b>
-  <%= "#{time_ago_in_words(@episode.created_at)} ago" %>
-</p>
-
-<p>
-  <b>Torrents</b>
-  <ul>
-  <% @episode.torrents.each do |torrent| %>
-    <li>
-      <%= link_to(torrent.file_format, torrent.file.url) if torrent %>
-    </li>
-  <% end -%>
-  </ul>
-</p>
-
-<%= link_to 'Edit', edit_show_episode_path(@show, @episode) %> |
-<%= link_to 'Back', show_episodes_path(@show) %>
+<div class="row">
+  <dl class="dl-horizontal">
+    <dt>Season Number:</dt>
+    <dd><%= @episode.season_number %></dd>
+    <dt>Episode Number:</dt>
+    <dd><%= @episode.episode_number %></dd>
+    <dt>Timestamp</dt>
+    <dd><%= "#{time_ago_in_words(@episode.created_at)} ago" %></dd>
+    <dt>Torrents</dt>
+    <dd>
+      <ul class="unstyled">
+      <% @episode.torrents.each do |torrent| %>
+        <li>
+          <%= link_to(torrent.file_format, torrent.file.url) if torrent %>
+        </li>
+      <% end -%>
+      </ul>
+    </dd>
+  </dl>
+</div>
+<div class="row">
+  <div class="span3 offset1">
+    <p>
+      <%= link_to 'Edit', edit_show_episode_path(@show, @episode) %> |
+      <%= link_to 'Back', show_episodes_path(@show) %>
+    </p>
+  </div>
+</div>
